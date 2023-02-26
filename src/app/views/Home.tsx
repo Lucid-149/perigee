@@ -20,7 +20,7 @@ const HomePage: Page = {
     keywords: "",
   },
   url: "/",
-  protected: true,
+  protected: false,
   sections: [
     {
       index: 0,
