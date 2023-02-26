@@ -1,0 +1,58 @@
+[
+    {
+      "Q": "How do I book a flight through the app?",
+      "A": "To book a flight through the app, simply search for your desired destination and travel dates, and then select the flight that best meets your needs. You can filter your search results by factors such as price, duration, and departure time. Once you've found the right flight, you can proceed to the booking process by following the prompts on the app."
+    },
+    {
+      "Q": "Can I book a hotel through the app?",
+      "A": "Yes, the app allows you to search for and book hotels, resorts, and vacation rentals in destinations around the world. Simply search for your desired location and dates, and then browse through the available options. You can filter your search results by factors such as price, rating, and amenities. Once you've found the right accommodations, you can proceed to the booking process by following the prompts on the app."
+    },
+    {
+      "Q": "How do I track my expenses while traveling?",
+      "A": "The app has a built-in expense tracking feature that allows you to keep track of your expenses while on the go. Simply enter the details of each expenditure, including the amount, currency, and category, and the app will do the rest. You can view a summary of your expenses at any time and even export the data to a spreadsheet if needed."
+    },
+    {
+      "Q": "Is the app available in other languages?",
+      "A": "Currently, the app is only available in English. However, we are working on adding additional language support in the future. Stay tuned for updates."
+    },
+    {
+      "Q": "How do I book a tour with your website?",
+      "A": "To book a tour, simply visit our website and select the tour you are interested in. You can then proceed to the booking page and enter your personal and payment information to complete the booking."
+    },
+    {
+      "Q": "Can I plan my itinerary using your website?",
+      "A": "Yes, our website allows you to plan and customize your itinerary. You can add or remove activities, accommodations, and transportation options to create the perfect trip for you."
+    },
+    {
+      "Q": "What travel options are available on your website?",
+      "A": "Our website offers a variety of travel options, including flights, car rentals, and cruise bookings. You can easily access these options from the main menu on our website."
+    },
+    {
+      "Q": "Can I book flights through your website?",
+      "A": "Yes, you can book flights on our website. Simply select the 'Flights' option from the main menu and enter your travel details to view available flights and prices."
+    },
+    {
+      "Q": "Do you offer car rental services?",
+      "A": "Yes, we offer car rental services through our website. You can select the 'Car Rentals' option from the main menu and enter your rental dates and location to view available vehicles and prices."
+    },
+    {
+      "Q": "Can I book a cruise through your website?",
+      "A": "Yes, you can book a cruise through our website. Simply select the 'Cruises' option from the main menu and choose your desired destination and travel dates to view available cruise options and prices."
+    },
+    {
+      "Q": "Are there any discounts available for booking multiple travel services on your website?",
+      "A": "Yes, we offer discounts for booking multiple travel services on our website. You can view available discounts by visiting the 'Deals' section of our website or by contacting our customer support team."
+    },
+    {
+      "Q": "Can I make changes to my itinerary after it has been booked?",
+      "A": "Yes, you can make changes to your itinerary after it has been booked. Simply log in to your account on our website and select the itinerary you would like to modify. From there, you can add or remove activities, accommodations, and transportation options as needed."
+    },
+    {
+      "Q": "Are there any age restrictions for booking tours or travel services on your website?",
+      "A": "Our tours and travel services may have age restrictions, which will be indicated on the tour or service page on our website. You can also contact our customer support team for more information about age restrictions."
+    },
+    {
+      "Q": "Do you offer customer support if I have any issues while booking or during my trip?",
+      "A": "Yes, we offer 24/7 customer support to assist with any issues you may have while booking or during your trip. You can contact our support team through the 'Contact Us' page on our website or by calling the support hotline listed on our website."
+    }
+  ]

@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "_pb_users_auth_",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [
+      {
+        "id": "users_name",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "users_avatar",
+        "name": "avatar",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [
+            "image/jpg",
+            "image/jpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/gif"
+          ],
+          "thumbs": null
+        }
+      },
+      {
+        "id": "sf55hmwq",
+        "name": "role",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "Agent",
+            "Client"
+          ]
+        }
+      }
+    ],
+    "listRule": "id = @request.auth.id",
+    "viewRule": "id = @request.auth.id",
+    "createRule": "",
+    "updateRule": "id = @request.auth.id",
+    "deleteRule": "id = @request.auth.id",
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": true,
+      "allowUsernameAuth": true,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 8,
+      "onlyEmailDomains": null,
+      "requireEmail": true
+    }
+  },
+  {
+    "id": "bsr1gr9je3kyo76",
+    "name": "trips",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "dyysa6rp",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "kqens8vh",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "7ekmsliz",
+        "name": "start_location",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xtybgmnp",
+        "name": "end_location",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "vrxbqken",
+        "name": "distance",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "0iawpg0m",
+        "name": "type",
+        "type": "select",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "Walk",
+            "Drive",
+            "Train Ride",
+            "Flight",
+            "Cycle",
+            "Cruise"
+          ]
+        }
+      },
+      {
+        "id": "4mmop4jk",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": 200,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "slputyqj",
+        "name": "attractions",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "qtmjtiopzg43igq",
+          "cascadeDelete": false,
+          "maxSelect": 20,
+          "displayFields": [
+            "name",
+            "location",
+            "country"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "options": {}
+  },
+  {
+    "id": "zvhc9nxgz9wjaxt",
+    "name": "activities",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "9tb7irhp",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "pbkfnpns",
+        "name": "location",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "s4qj2ktf",
+        "name": "price",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "l28sb5oa",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "erajs5lc",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "dsfzxmxf",
+        "name": "duration_in_hours",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "j9nju9bio95g9jo",
+    "name": "itineraries",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "zypho9d1",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "iqkh6zub",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "hocibkp4",
+        "name": "approved",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "qtjg4mut",
+        "name": "price_per_person",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "3zfignqh",
+        "name": "duration",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "tw24cc5e",
+        "name": "trips",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "bsr1gr9je3kyo76",
+          "cascadeDelete": false,
+          "maxSelect": 30,
+          "displayFields": [
+            "name",
+            "start_location",
+            "end_location"
+          ]
+        }
+      },
+      {
+        "id": "rbjlt8ws",
+        "name": "activities",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "zvhc9nxgz9wjaxt",
+          "cascadeDelete": false,
+          "maxSelect": 30,
+          "displayFields": [
+            "name",
+            "location",
+            "price",
+            "country"
+          ]
+        }
+      },
+      {
+        "id": "gwmcetog",
+        "name": "accomodations",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "6sz1jbyr4fc26qu",
+          "cascadeDelete": false,
+          "maxSelect": 30,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "mhttqzat",
+        "name": "user",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": [
+            "username",
+            "email",
+            "verified"
+          ]
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "user = @request.auth.id",
+    "updateRule": "user = @request.auth.id",
+    "deleteRule": "user = @request.auth.id",
+    "options": {}
+  },
+  {
+    "id": "xc3fcb3glpd0e2y",
+    "name": "tours",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "f3kmzx27",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "6taukuuh",
+        "name": "type",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "Guided",
+            "Self Drive"
+          ]
+        }
+      },
+      {
+        "id": "m1swxazl",
+        "name": "price",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "cmgi7uqn",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "sjdnnyja",
+        "name": "image",
+        "type": "url",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      },
+      {
+        "id": "n4xndbwn",
+        "name": "itinerary",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "j9nju9bio95g9jo",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "pdzm5sbz",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "qoevorhs",
+        "name": "client",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "trsji0zl",
+        "name": "rating",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "ygtc3sfuuq1p832",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "zvruzck0",
+        "name": "duration_in_days",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "6sz1jbyr4fc26qu",
+    "name": "accomodation",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "h2nuipsr",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "nf2orxtl",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xcp1spuf",
+        "name": "price",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "rhf9lro6",
+        "name": "type",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 2,
+          "values": [
+            "Camping",
+            "Lodge",
+            "B&B",
+            "Hostel",
+            "Hotel",
+            "Resort"
+          ]
+        }
+      },
+      {
+        "id": "jnwkibv0",
+        "name": "location",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "hiory3pp",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "ggchwshf",
+        "name": "cover_image",
+        "type": "url",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      },
+      {
+        "id": "vhg8oqvi",
+        "name": "active",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "khoscdf6jll1d9x",
+    "name": "cars",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "j0wva0am",
+        "name": "make",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "wi2lzz1r",
+        "name": "model",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "9emp8rvv",
+        "name": "transmission",
+        "type": "select",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "values": [
+            "Automatic",
+            "Manual"
+          ]
+        }
+      },
+      {
+        "id": "owxkujq5",
+        "name": "max_price",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "um7vqmh6",
+        "name": "min_price",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "wxms8gtt",
+        "name": "camping_equipped",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "omv4l3rg",
+        "name": "four_wheel_drive",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "jhagcvar",
+        "name": "image",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [],
+          "thumbs": []
+        }
+      },
+      {
+        "id": "t7cwf49e",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "31l5m3t8u2zwyv6",
+    "name": "booking",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "akxvkvni",
+        "name": "date",
+        "type": "date",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": "",
+          "max": ""
+        }
+      },
+      {
+        "id": "w0ysemuf",
+        "name": "price",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "2jn5woqc",
+        "name": "number_of_people",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "lriyuujq",
+        "name": "tour",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "xc3fcb3glpd0e2y",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "jy4lpq2h",
+        "name": "car",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "khoscdf6jll1d9x",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "puticmhx",
+        "name": "user",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      }
+    ],
+    "listRule": "user = @request.auth.id",
+    "viewRule": "user = @request.auth.id",
+    "createRule": "user = @request.auth.id",
+    "updateRule": "user = @request.auth.id",
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "ygtc3sfuuq1p832",
+    "name": "rating",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "acok0qis",
+        "name": "rate",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 5
+        }
+      },
+      {
+        "id": "aheculfz",
+        "name": "comment",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "limlag01",
+        "name": "user",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "myaiynqd",
+        "name": "tour",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "xc3fcb3glpd0e2y",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      },
+      {
+        "id": "rybcxag1",
+        "name": "car",
+        "type": "relation",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "collectionId": "khoscdf6jll1d9x",
+          "cascadeDelete": false,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "user = @request.auth.id",
+    "updateRule": "user = @request.auth.id",
+    "deleteRule": "user = @request.auth.id",
+    "options": {}
+  },
+  {
+    "id": "qtmjtiopzg43igq",
+    "name": "attractions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "108cguov",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "lf2bh7lf",
+        "name": "video",
+        "type": "url",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      },
+      {
+        "id": "25uz3czl",
+        "name": "image",
+        "type": "url",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "exceptDomains": null,
+          "onlyDomains": null
+        }
+      },
+      {
+        "id": "l9b90fyx",
+        "name": "exerpt",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 4,
+          "max": 220,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "7yxjvzrh",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "5bymkjnq",
+        "name": "location",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "ymhpbgyn",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]
