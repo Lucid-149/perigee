@@ -23,47 +23,55 @@ const Login = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <CardComponent
-        title={`${user ? user.name : "Login"}`}
-        state={{ type: error ? "error" : "info", state: "normal" }}
-      >
-        <>
-          {user && (
-            <div>
-              <h4 className=" text-sky-500 text-xl font-bold italic">
-                {user.email}
-              </h4>
-              {user.verified ? (
-                <span>Verified</span>
-              ) : (
-                <span className=" text-red-600 font-bold uppercase text-xs">
-                  Not Verified
-                </span>
-              )}
-              <PrimaryBtn Type="primary" Text="Dashboard" LinkTo="/dashboard"/>
-            </div>
-          )}
-          {user && <button onClick={logout}>Logout</button>}
-          {!user && (
-            <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit">Login</button>
-            </form>
-          )}
-          {error && <p>{error}</p>}
-        </>
-      </CardComponent>
-    </Suspense>
+    <div className="flex flex-col justify-center items-center h-full">
+      <Suspense fallback={<div>Loading...</div>}>
+        <CardComponent
+          title={`${user ? user.name : "Login"}`}
+          state={{ type: error ? "error" : "info", state: "normal" }}
+        >
+          <>
+            {user && (
+              <div className="">
+                <h4 className=" text-sky-500 text-xl font-bold italic">
+                  {user.email}
+                </h4>
+                {user.verified ? (
+                  <span>Verified</span>
+                ) : (
+                  <span className=" text-red-600 font-bold uppercase text-xs">
+                    Not Verified
+                  </span>
+                )}
+                <PrimaryBtn
+                  Type="primary"
+                  Text="Dashboard"
+                  LinkTo="/dashboard"
+                />
+              </div>
+            )}
+            {user && <button onClick={logout}>Logout</button>}
+            {!user && (
+              <form onSubmit={handleSubmit}>
+                <input
+                  className=" placeholder:text-gray-600"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  className=" placeholder:text-gray-600"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Login</button>
+              </form>
+            )}
+            {error && <p>{error}</p>}
+          </>
+        </CardComponent>
+      </Suspense>
+    </div>
   );
 };
 
@@ -90,22 +98,25 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className=" w-full h-full glass flex justify-center items-center flex-wrap">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <input
+          className=" placeholder:text-gray-600"
           type="email"
           value={newUser?.email}
           placeholder="Email"
           onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
         />
         <input
+          className=" placeholder:text-gray-600"
           type="text"
           placeholder="Password"
           value={newUser?.password}
           onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
         />
         <input
+          className=" placeholder:text-gray-600"
           type="text"
           placeholder="Confirm Password"
           value={newUser?.passwordConfirm}
@@ -114,12 +125,14 @@ const Register = () => {
           }
         />
         <input
+          className=" placeholder:text-gray-600"
           type="text"
           placeholder="Username"
           value={newUser?.username}
           onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
         />
         <input
+          className=" placeholder:text-gray-600"
           type="text"
           placeholder="Name"
           value={newUser?.name}
