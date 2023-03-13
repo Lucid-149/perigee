@@ -1,16 +1,15 @@
-import React, { lazy,Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { Page, Section } from "../model/app";
-const Hero = lazy(() => import("../../components/Layout/sections/Hero"));
-import Images from "../../data/content/Images";
-import AppInfo from "../../data/content/info";
-import TextAnimation from "../../components/animations/Text";
-function sectionsComponent() {
-  return (
-    <>
-      <h1>home</h1>
-    </>
-  );
-}
+const Hero = lazy(() => import("../../components/Layout/Containers/Hero"));
+const Pricing = lazy(
+  () => import("../../components/Layout/Containers/Pricing")
+);
+const Services = lazy(
+  () => import("../../components/Layout/Containers/Services")
+);
+const Testimonials = lazy(
+  () => import("../../components/Layout/Containers/Testimonials")
+);
 
 const HomePage: Page = {
   name: "Home",
@@ -27,22 +26,36 @@ const HomePage: Page = {
       name: "home",
       component: (
         <Suspense fallback={<div>Loading...</div>}>
-        <Hero
-          images={Images}
-          children={
-            <TextAnimation
-              className=" font-semibold w-10/12 text-center"
-              text={AppInfo.description}
-            />
-          }
-        />
+          <Hero />
         </Suspense>
       ),
     },
     {
       index: 1,
       name: "our story",
-      component: <>{sectionsComponent()}</>,
+      component: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Services />
+        </Suspense>
+      ),
+    },
+    {
+      index: 2,
+      name: "pricing",
+      component: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Pricing />
+        </Suspense>
+      ),
+    },
+    {
+      index: 3,
+      name: "testimonials",
+      component: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Testimonials />
+        </Suspense>
+      ),
     },
   ],
   subPages: [],

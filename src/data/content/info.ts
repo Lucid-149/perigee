@@ -9,6 +9,86 @@ const AppInfo = {
     "We also pride ourselves on providing exceptional customer service. Our team is dedicated to helping travelers plan their perfect African adventure, and we are always available to answer questions, provide recommendations, and offer support throughout the trip-planning process.",
     "Ultimately, our goal is to help travelers experience Africa in a way that is meaningful, memorable, and hassle-free. We believe that everyone should have the opportunity to explore this incredible continent, and we are excited to help make that a reality.",
   ],
+  Services: [
+    {
+      id: 0,
+      title: "Tour Planning",
+      description: "Plan your dream African adventure with our customizable itineraries.",
+      image:
+        "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 1,
+      title: "Hotel Booking",
+      description: "Book your accomodation with us and get a stress free experience",
+      image:
+        "https://images.unsplash.com/photo-1537029022959-fa92a4a7a5aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 2,
+      title: "Flight Booking",
+      description: "Book your flight with us and get the best rates",
+      image:
+        "https://images.unsplash.com/photo-1600586363978-e520de02cdaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 3,
+      title: "Car Rental",
+      description: "We offer a wide range of cars for hire as self-drive or with a drive",
+      image:
+        "https://images.unsplash.com/photo-1639402479438-d74dc22cca28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmFtaWJpYSUyMGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1506&q=60",
+
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 4,
+      title: "Visa Assistance",
+      description: "Get all your visa support in one place ",
+      image:
+        "https://images.unsplash.com/photo-1619467416348-6a782839e95f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 5,
+      title: "Travel Insurance",
+      description: "We provide travel insurace through our trusted providers",
+      image:
+        "https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    },
+    {
+      id: 6,
+      title: "Travel Guide",
+      description: "We provide travel guides for all our destinations",
+      image:
+        "https://images.unsplash.com/photo-1560866597-56d1507e9a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80",
+      Link: {
+        url: "/login",
+        text: "Book Now",
+      },
+    }
+  ],
   ourvalues: [
     {
       title:

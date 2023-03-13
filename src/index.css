@@ -133,6 +133,12 @@ body {
   @apply backdrop-blur-md;
 }
 
+.text-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: calc(0.5rem + 1vw);
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
 
 input[type="range"]::-webkit-slider-thumb {
   @apply bg-inherit bg-opacity-50 rounded-full hover:scale-[300%] transition-all duration-500 ease-in-out;
