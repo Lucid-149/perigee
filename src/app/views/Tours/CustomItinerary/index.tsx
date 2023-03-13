@@ -6,7 +6,7 @@ const ItineraryPlannerPage: Page = {
     name: "Itinerary Planner",
     image: "/images/tourspage.webp",
     head: {
-        title: "",
+        title: "Custom Tour Generator",
         description: "",
         keywords: "",
     },
