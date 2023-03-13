@@ -7,7 +7,7 @@ const TourPage: Page = {
   name: "Tours",
   image: "/images/tourspage.webp",
   head: {
-    title: "",
+    title: "Tours",
     description: "",
     keywords: "",
   },

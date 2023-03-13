@@ -49,7 +49,7 @@ const AttractionsPage: Page = {
   name: "Attractions",
   image: "/images/blogpage.webp",
   head: {
-    title: "",
+    title: "Attractions",
     description: "",
     keywords: "",
   },

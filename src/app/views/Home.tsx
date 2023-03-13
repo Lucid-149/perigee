@@ -15,7 +15,7 @@ function sectionsComponent() {
 const HomePage: Page = {
   name: "Home",
   head: {
-    title: "",
+    title: "Home",
     description: "",
     keywords: "",
   },

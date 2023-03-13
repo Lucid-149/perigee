@@ -5,7 +5,7 @@ const FaqPage: Page = {
     name: "Faq",
     image: "/images/faq.webp",
     head: {
-        title: "",
+        title: "Faq",
         description: "",
         keywords: "",
     },

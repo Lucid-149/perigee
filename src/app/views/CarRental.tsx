@@ -4,7 +4,7 @@ const CarRentalPage: Page = {
     name: "Car Rental",
     image: "/images/home.webp",
     head: {
-        title: "",
+        title: "Car Rental",
         description: "",
         keywords: "",
     },

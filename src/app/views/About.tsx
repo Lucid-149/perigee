@@ -5,7 +5,7 @@ const AboutPage: Page = {
   name: "About",
   image: "/images/about.webp",
   head: {
-    title: "",
+    title: "About",
     description: "",
     keywords: "",
   },
