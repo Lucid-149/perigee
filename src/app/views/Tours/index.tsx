@@ -1,7 +1,7 @@
 import { Page } from "../../model/app";
 import ToursComponent from "../../../components/Plugins/ToursComponent";
 import TourViewPage,{ItineraryView} from "./TourPage";
-
+import ItineraryPlannerPage from "./CustomItinerary";
 
 const TourPage: Page = {
   name: "Tours",
@@ -19,6 +19,9 @@ const TourPage: Page = {
       name: "Tour",
       component: <ToursComponent />,
     },
+  ],
+  subPages:[
+    ItineraryPlannerPage
   ],
   dynamicPages: [
     {
@@ -45,7 +48,7 @@ const TourPage: Page = {
       ]
 
     },
-
+    
   ]
 };
 

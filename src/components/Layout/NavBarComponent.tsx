@@ -68,6 +68,14 @@ const Navbar = () => {
           }
           return null;
         })}
+        <Link
+          className={` border-yellow-500 border-opacity-50 h-full py-7 transition-all font-semibold ease-in-out duration-500 ${
+            isActive === "/login" ? "border-b-4 px-6 " : ""
+          }`}
+          to="/login"
+        >
+          Login
+        </Link>
       </ul>
       <div
         className={` h-full p-3 ${isMobile ? "flex" : "hidden"} cursor-pointer`}
@@ -121,15 +129,15 @@ const Navbar = () => {
         viewBox="0 0 1024 1024"
       >
         <path
-          fill={darkTheme? Theme.Colors.Tertiary: Theme.Colors.Primary}
+          fill={darkTheme ? Theme.Colors.Tertiary : Theme.Colors.Primary}
           d="M512 982.426c-258.79 0-469.33-210.54-469.33-469.33S253.21 43.78 512 43.78s469.33 210.524 469.33 469.315S770.79 982.426 512 982.426zm0-920.587c-248.827 0-451.256 202.435-451.256 451.257 0 248.837 202.43 451.271 451.256 451.271s451.256-202.434 451.256-451.271c0-248.817-202.43-451.257-451.256-451.257z"
         ></path>
         <path
-          fill={darkTheme? Theme.Colors.Tertiary: Theme.Colors.Primary}
+          fill={darkTheme ? Theme.Colors.Tertiary : Theme.Colors.Primary}
           d="M906.1020000000001 473.4a42.527 42.527 0 1085.053 0 42.527 42.527 0 10-85.053 0z"
         ></path>
         <path
-          fill={darkTheme? Theme.Colors.Tertiary: Theme.Colors.Primary}
+          fill={darkTheme ? Theme.Colors.Tertiary : Theme.Colors.Primary}
           d="M948.628 524.948c-28.426 0-51.563-23.116-51.563-51.548s23.132-51.563 51.563-51.563 51.564 23.132 51.564 51.563-23.132 51.548-51.564 51.548zm0-85.048c-18.462 0-33.484 15.032-33.484 33.5 0 18.458 15.022 33.485 33.484 33.485s33.485-15.032 33.485-33.485a33.526 33.526 0 00-33.485-33.5z"
         ></path>
         <path
@@ -137,7 +145,7 @@ const Navbar = () => {
           d="M140.887 497.705a281.216 281.216 0 10562.432 0 281.216 281.216 0 10-562.432 0z"
         ></path>
         <path
-          fill={darkTheme? Theme.Colors.Tertiary: Theme.Colors.Primary}
+          fill={darkTheme ? Theme.Colors.Tertiary : Theme.Colors.Primary}
           d="M422.108 787.948c-160.046 0-290.258-130.197-290.258-290.248s130.212-290.248 290.258-290.248S712.366 337.65 712.366 497.7 582.15 787.948 422.108 787.948zm0-562.438c-150.082 0-272.179 122.107-272.179 272.19s122.102 272.19 272.18 272.19S694.286 647.781 694.286 497.7 572.186 225.51 422.108 225.51z"
         ></path>
         <path

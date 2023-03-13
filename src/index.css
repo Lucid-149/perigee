@@ -19,7 +19,7 @@ input:placeholder-shown{
   @apply text-2xl text-neutral-800
 }
 button{
-  @apply glass hover:shadow-xl hover:px-16 ease-in-out duration-300 transition-all my-2 rounded-xl border border-slate-200/10 backdrop-filter backdrop-blur-2xl p-4 px-12 text-xl;
+  @apply glass hover:shadow-xl ease-in-out duration-300 transition-all rounded-xl border border-slate-200/10 backdrop-filter backdrop-blur-2xl p-5 text-xl;
 }
 @font-face {
   font-family: 'Shanti';
@@ -55,7 +55,6 @@ h4,
 h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
-  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 h1 {
@@ -85,7 +84,6 @@ h6 {
 p {
   font-family: 'Flamenco', serif;
   font-size: calc(1rem + 0.5vw);
-  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 .line-clamp {
   display: -webkit-box;
@@ -135,11 +133,6 @@ body {
   @apply backdrop-blur-md;
 }
 
-p {
-  font-size: calc(1rem + 0.5vw);
-  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  font-family: 'Flamenco', cursive;
-}
 
 input[type="range"]::-webkit-slider-thumb {
   @apply bg-inherit bg-opacity-50 rounded-full hover:scale-[300%] transition-all duration-500 ease-in-out;

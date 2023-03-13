@@ -6,6 +6,8 @@ const CardComponent = lazy(
   () => import("../../../components/Layout/CardComponet")
 );
 import { createUserRequest } from "../../../data/api/auth";
+import { Link } from "react-router-dom";
+import { PrimaryBtn } from "../../../components/Containers";
 const Login = () => {
   const { login, user, logout } = useAuth();
   const [email, setEmail] = useState("");
@@ -39,7 +41,7 @@ const Login = () => {
                   Not Verified
                 </span>
               )}
-             <Migrate />
+              <PrimaryBtn Type="primary" Text="Dashboard" LinkTo="/dashboard"/>
             </div>
           )}
           {user && <button onClick={logout}>Logout</button>}

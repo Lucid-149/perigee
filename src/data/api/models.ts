@@ -46,6 +46,7 @@ export interface Trip {
 }
 
 export interface Activity {
+  cost: number;
   id?: string;
   collectionId?: string;
   collectionName?: string;
