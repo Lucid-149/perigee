@@ -1,7 +1,7 @@
 import TourApiCalls from "../api/routes";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { apiController } from "../api";
-const trips= [
+const trips = [
   // Kenya
   {
     name: "Masai Mara Safari",
@@ -109,185 +109,742 @@ const trips= [
 
 const activities = [
   {
-    name: "Nairobi National Park Safari",
-    location: "Nairobi",
-    price: 75,
-    description:
-      "Take a guided safari tour of Nairobi National Park, and witness the amazing wildlife and birdlife of the region, including lions, rhinos, giraffes, and many more.",
-    country: "Kenya",
-    duration_in_hours: 4,
-  },
-  {
-    name: "Maasai Mara Hot Air Balloon Safari",
-    location: "Maasai Mara",
-    price: 400,
-    description:
-      "Experience the breathtaking landscapes of Maasai Mara from above, as you embark on a hot air balloon safari and witness the amazing wildlife and birdlife of the region.",
-    country: "Kenya",
-    duration_in_hours: 3,
-  },
-  {
-    name: "Mombasa City Tour",
-    location: "Mombasa",
-    price: 50,
-    description:
-      "Take a guided tour of Mombasa city, and explore the rich history, culture, and architecture of the region, including Fort Jesus, Old Town, and more.",
-    country: "Kenya",
-    duration_in_hours: 6,
-  },
-  {
-    name: "Mount Kenya Hiking Expedition",
-    location: "Mount Kenya",
-    price: 300,
-    description:
-      "Embark on a challenging hiking expedition to the summit of Mount Kenya, and witness the stunning views and unique wildlife and plant life of the region.",
-    country: "Kenya",
-    duration_in_hours: 72,
-  },
-  {
-    name: "Diani Beach Snorkeling Tour",
-    location: "Diani Beach",
+    name: "Combi Sundowner drive & cheetah feeding",
+    location: "Bagatelle",
+    description:"Experience the thrill of feeding cheetahs while taking a scenic Sundowner drive in Bagatelle, Namibia. This unforgettable adventure is priced at only $60 and lasts approximately 2-3 hours. #Namibia #WildlifeEncounter #Safari #Adventure",
+    duration_in_hours: 2,
+    country: "Namibia",
     price: 60,
-    description:
-      "Join a snorkeling tour of Diani Beach, and discover the amazing marine life of the region, including colorful fish, coral reefs, and more.",
-    country: "Kenya",
-    duration_in_hours: 3,
   },
   {
-    name: "Nairobi Giraffe Centre Visit",
-    location: "Nairobi",
-    price: 20,
-    description:
-      "Visit the Giraffe Centre in Nairobi and get up close and personal with the beautiful and majestic giraffes of the region.",
-    country: "Kenya",
-    duration_in_hours: 2,
-  },
-  {
-    name: "Lake Nakuru National Park Safari",
-    location: "Lake Nakuru",
-    price: 120,
-    description:
-      "Take a guided safari tour of Lake Nakuru National Park, and witness the amazing wildlife and birdlife of the region, including flamingos, rhinos, lions, and many more.",
-    country: "Kenya",
-    duration_in_hours: 5,
-  },
-  {
-    name: "Malindi Marine Park Snorkeling Tour",
-    location: "Malindi",
-    price: 75,
-    description:
-      "Join a snorkeling tour of Malindi Marine Park, and discover the amazing marine life of the region, including sea turtles, colorful fish, coral reefs, and more.",
-    country: "Kenya",
-    duration_in_hours: 4,
-  },
-  {
-    name: "Hells Gate National Park Biking Tour",
-    location: "Hells Gate",
-    price: 50,
-    description:
-      "Explore Hells Gate National Park on a guided biking tour, and witness the unique geological formations and stunning landscapes of the region.",
-    country: "Kenya",
-    duration_in_hours: 3,
-  },
-  {
-    name: "Kilifi Creek Kayaking Tour",
-    location: "Kilifi Creek",
-    price: 35,
-    description:
-      "Join a kayaking tour of Kilifi Creek, and explore the stunning mangrove forests, sandbars, and hidden beaches of the region.",
-    country: "Kenya",
-    duration_in_hours: 2,
-  },
-  {
-    name: "Sossusvlei Dunes Tour",
-    location: "Sossusvlei",
-    price: 150,
-    description:
-      "Take a guided tour of the iconic Sossusvlei dunes and witness the stunning red-orange landscapes of the Namib Desert, as well as unique flora and fauna of the region.",
+    name: "Cheetah Feeding & Sundowner",
+    location: "Bagatelle",
     country: "Namibia",
-    duration_in_hours: 6,
-  },
-  {
-    name: "Etosha National Park Safari",
-    location: "Etosha",
-    price: 200,
-    description:
-      "Embark on a guided safari tour of Etosha National Park, and witness the amazing wildlife and birdlife of the region, including elephants, lions, rhinos, and many more.",
-    country: "Namibia",
-    duration_in_hours: 8,
-  },
-  {
-    name: "Fish River Canyon Hiking Expedition",
-    location: "Fish River Canyon",
-    price: 350,
-    description:
-      "Join a challenging hiking expedition to Fish River Canyon, and witness the breathtaking views and unique geological formations of the region.",
-    country: "Namibia",
-    duration_in_hours: 72,
-  },
-  {
-    name: "Kolmanskop Ghost Town Visit",
-    location: "Kolmanskop",
     price: 25,
-    description:
-      "Visit the eerie and fascinating ghost town of Kolmanskop, and explore the abandoned buildings, decaying machinery, and rich history of the region.",
+    duration_in_hours: 2.5,
+    description: "Feed the cheetahs at sunset and enjoy a stunning view with a drink in hand. #Namibia #wildlife #safari"
+  },
+  {
+    name: "Sundowner nature drive",
+    location: "Bagatelle",
     country: "Namibia",
+    price: 45,
     duration_in_hours: 2,
+    description: "Explore the stunning scenery of Bagatelle and enjoy a drink while watching the sunset. #Namibia #safari #nature"
   },
   {
-    name: "Swakopmund Sandboarding Adventure",
-    location: "Swakopmund",
-    price: 60,
-    description:
-      "Experience the thrill of sandboarding on the towering dunes of Swakopmund, and witness the stunning views of the Namib Desert from above.",
+    name: "Night Drive",
+    location: "Bagatelle",
     country: "Namibia",
+    price: 30,
+    duration_in_hours: 2,
+    description: "Experience the thrill of the night and discover the nocturnal wildlife of Bagatelle. #Namibia #safari #wildlife"
+  },
+  {
+    name: "Morning scenic drive",
+    location: "Bagatelle",
+    country: "Namibia",
+    price: 40,
     duration_in_hours: 3,
-  },
-
+    description: "Take in the breathtaking views of Bagatelle in the morning light and spot some wildlife along the way. #Namibia #safari #nature"
+  },  
   {
-    name: "Skeleton Coast Fly-in Safari",
-    location: "Skeleton Coast",
-    price: 1200,
-    description:
-      "Embark on a once-in-a-lifetime fly-in safari to the remote Skeleton Coast, and witness the stunning landscapes, wildlife, and cultural heritage of the region.",
+    name: "Horseback safari",
+    location: "Bagatelle",
     country: "Namibia",
-    duration_in_hours: 24,
+    price: 50,
+    description: "Explore the stunning landscape of Namibia on horseback, guided by expert riders. Experience wildlife up close while taking in the breathtaking views.",
+    duration_in_hours: 2,
+    },
+    {
+    name: "Star Safari from Observatory",
+    location: "Bagatelle",
+    country: "Namibia",
+    price: 10,
+    description: "Join us for a magical evening under the stars at our observatory. Learn about the constellations from expert guides and enjoy a spectacular view of the night sky.",
+    duration_in_hours: 1.5,
+    },
+    {
+    name: "Morning Bushman Walk",
+    location: "Bagatelle",
+    country: "Namibia",
+    price: 30,
+    description: "Embark on a guided walk with the indigenous San people, learning about their ancient culture and the local flora and fauna. A unique and unforgettable experience.",
+    duration_in_hours: 2,
+    },
+    {
+    name: "1.5hr Horseback riding",
+    location: "Büllsport Guestfarm",
+    country: "Namibia",
+    price: 45,
+    description: "Discover the rugged beauty of the Namibian landscape on horseback. Suitable for riders of all levels, with expert guides to ensure your safety and enjoyment.",
+    duration_in_hours: 1.5,
+    },
+    {
+      name: "Himba Excursion",
+      location: "Camp Aussicht",
+      country: "Namibia",
+      price: 60,
+      duration_in_hours: 4,
+      description: "Experience the fascinating culture and customs of the Himba people on a guided excursion.",
+    },
+    {
+      name: "Himba Excursion (child 5-11)",
+      location: "Camp Aussicht ",
+      country: "Namibia",
+      price: 30,
+      duration_in_hours: 4,
+      description: "Bring your child to learn about the Himba people and their way of life on a guided excursion.",
+    },
+    {
+      name: "Catamaran Cruise - dolphin & seal",
+      location: "Catamaran Charters",
+      country: "Namibia",
+      price: 70,
+      duration_in_hours: 3,
+      description: "Embark on a breathtaking journey through the Walvis Bay harbor and spot playful dolphins and seals.",
+    },
+    {
+      name: "Catamaran Cruise - dolphin & seal (child 4-12)",
+      location: "Catamaran Charters",
+      country: "Namibia",
+      price: 40,
+      duration_in_hours: 3,
+      description: "Take your child on an unforgettable adventure to see dolphins and seals up close from a luxurious catamaran.",
+    },
+    {
+      name: "Marine Desert Adventure",
+      location: "Catamaran Charters",
+      country: "Namibia",
+      price: 205,
+    },
+    {
+      name: "Marine Desert Adventure child 4-12 years",
+      location: "Catamaran Charters",
+      country: "Namibia",
+      price: 140,
+    },
+    {
+      name: "Quadbiking  2 hrs",
+      location: "Desert Explorers",
+      country: "Namibia",
+      price: 75,
+    },
+    {
+      name: '3 Hour Combo "Adrenaline Package" (Quad bike + lie down boarding)',
+      location: "Desert Explorers",
+      country: "Namibia",
+      price: 60,
+    },
+  
+  {
+  name: "Marine Desert Adventure",
+  location: "Catamaran Charters",
+  country: "Namibia",
+  price: 205,
+  duration_in_hours: 5,
+  description: "Explore the Namib desert and marine life with a 5-hour guided adventure. Marvel at the spectacular landscapes, search for desert wildlife, and enjoy a catamaran cruise to see dolphins and seals up close. Snacks and drinks provided."
   },
   {
-    name: "Damaraland Rock Art Tour",
-    location: "Damaraland",
-    price: 300,
-    description:
-      "Join a guided tour of the ancient rock art sites in Damaraland, and learn about the rich cultural and spiritual history of the region.",
+  name: "Marine Desert Adventure child 4-12 years",
+  location: "Catamaran Charters",
+  country: "Namibia",
+  price: 140,
+  duration_in_hours: 5,
+  description: "A child-friendly version of the Marine Desert Adventure, this 5-hour guided tour is perfect for families with young children. Enjoy a catamaran cruise, search for desert wildlife, and explore the Namib desert. Snacks and drinks provided."
+  },
+  {
+  name: "Quadbiking 2 hrs",
+  location: "Desert Explorers",
+  country: "Namibia",
+  price: 75,
+  duration_in_hours: 2,
+  description: "Take a thrilling 2-hour quad bike ride through the Namib Desert. Ride through sand dunes and enjoy scenic views of the surrounding area. Experienced guides and safety equipment provided."
+  },
+  {
+  name: '3 Hour Combo "Adrenaline Package" (Quad bike + lie down boarding)',
+  location: "Desert Explorers",
+  country: "Namibia",
+  price: 60,
+  duration_in_hours: 3,
+  description: "Combine quad biking and lie down boarding for an adrenaline-packed 3-hour adventure. Enjoy the thrill of speeding through the desert on a quad bike before switching to lie down boarding for an exhilarating ride down a sand dune. Experienced guides and safety equipment provided."
+  },
+  {
+    name: "Champagne breakfast horse ride",
+    location: "Desert Homestead",
     country: "Namibia",
+    price: 30,
+    description: "Ride horseback through the beautiful Namibian desert and enjoy a champagne breakfast in the great outdoors.",
+    duration_in_hours: 2
+    },
+    {
+    name: "Sundowner horse ride",
+    location: "Desert Homestead",
+    country: "Namibia",
+    price: 75,
+    description: "Experience the breathtaking beauty of the Namibian desert on horseback as the sun sets, followed by drinks and snacks.",
+    duration_in_hours: 2
+    },
+    {
+    name: "Sundowner Drive",
+    location: "Desert Homestead",
+    country: "Namibia",
+    price: 125,
+    description: "Take a scenic drive through the Namibian desert and watch the sun set over the beautiful landscape while enjoying drinks and snacks.",
+    duration_in_hours: 3
+    },
+    {
+      name: "Sossusvlei Excursion",
+      location: "Desert Homestead",
+      country: "Namibia",
+      price: 85,
+      description: "Explore the world-famous Sossusvlei dunes on a guided excursion with breakfast included.",
+      duration_in_hours: 4
+    },
+    {
+      name: "Full day Etosha NP Game Drive",
+      location: "Etosha Safari Lodge",
+      country: "Namibia",
+      price: 125,
+      description: "Experience the diverse wildlife of Etosha National Park on a full day game drive with a knowledgeable guide.",
+      duration_in_hours: 8
+    },
+    {
+      name: "Half day Etosha NP Game Drive",
+      location: "Etosha Safari Lodge",
+      country: "Namibia",
+      price: 150,
+      description: "Embark on a half day game drive through Etosha National Park to spot some of the park's many animal species.",
+      duration_in_hours: 4
+    },
+    {
+      name: "Desert Elephant Tracking (half day)",
+      location: "Grootberg Lodge",
+      country: "Namibia",
+      price: 65,
+      description: "Track and observe desert-adapted elephants with an experienced guide on this half day excursion.",
+      duration_in_hours: 4
+    },    
+    {
+      name: "Rhino Tracking (3/4 day)",
+      location: "Grootberg Lodge",
+      country: "Namibia",
+      price: 50,
+      description: "Join experienced guides on a thrilling tracking adventure to spot the elusive black rhino in their natural habitat.",
+      duration_in_hours: 6
+    },
+    {
+      name: "Scenic Sundowner Drive on Plateau",
+      location: "Grootberg Lodge",
+      country: "Namibia",
+      price: 50,
+      description: "Enjoy a breathtaking sunset view while driving through the spectacular scenery of the Grootberg Plateau.",
+      duration_in_hours: 3
+    },
+    {
+      name: "Morning and afternoon game drive",
+      location: "Kalahari Anib",
+      country: "Namibia",
+      price: 55,
+      description: "Embark on a thrilling safari adventure with experienced guides to spot the diverse wildlife of the Kalahari.",
+      duration_in_hours: 5
+    },
+    {
+      name: "Katutura Bicycle Tour ",
+      location: "Katu Tours",
+      country: "Namibia",
+      price: 30,
+      description: "Explore the vibrant streets and rich culture of Windhoek's largest township, Katutura, on a fun and informative bicycle tour.",
+      duration_in_hours: 3
+    },
+    {
+      name: 'Living Desert Tour "Little 5"',
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 55,
+      description: "Discover the fascinating desert life of Namibia's 'Little 5' creatures, including the sidewinder snake and dancing white lady spider.",
+      duration_in_hours: 4
+    },
+    {
+      name: 'Living Desert Tour "Little 5" child <12',
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 30,
+      description: "Kids will love this exciting tour of the desert's smallest creatures, led by expert guides who bring the fascinating world of Namibian wildlife to life.",
+      duration_in_hours: 4
+    },
+    {
+      name: "Welwitschia Moon Landscape Tour",
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 110,
+      description: "Discover the wonders of the Namibian moon-like landscape and its unique flora on this guided tour. Explore the fascinating Moon Landscape of Namibia and its unusual plant life with Living Desert Adventures. #Namibia #travel",
+      duration_in_hours: 3
+      },
+      {
+      name: "Welwitschia Moon Landscape Tour (Child <12)",
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 55,
+      description: "Experience the magic of the Namibian moon-like landscape and its unique flora on this guided tour for children under 12. Discover the wonders of the Moon Landscape of Namibia with Living Desert Adventures. Ideal for young adventurers! #Namibia #familytravel",
+      duration_in_hours: 3
+      },
+      {
+      name: "Desert Extravaganza (LDT & Welwitschia)",
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 540,
+      description: "Combine two of Namibia's most popular tours and experience the best of the desert landscape on this full-day adventure. Maximize your desert adventure in Namibia with Living Desert Adventures' Desert Extravaganza. Two tours, one unforgettable day! #Namibia #travel",
+      duration_in_hours: 8
+      },
+      {
+      name: "Desert Extravaganza (LDT & Welwitschia) Child <12",
+      location: "Living Desert Adventures",
+      country: "Namibia",
+      price: 75,
+      description: "Experience the best of Namibia's desert landscape on this full-day adventure designed for children under 12. Looking for a family adventure in Namibia? Living Desert Adventures' Desert Extravaganza offers a full day of desert fun for kids! #Namibia #familytravel",
+      duration_in_hours: 8
+      },
+      {
+      name: "Game Drive",
+      location: "Mount Etjo",
+      country: "Namibia",
+      price: 40,
+      description: "Embark on an exciting game drive and spot some of Africa's most iconic wildlife in their natural habitat. Take a safari adventure at Mount Etjo in Namibia and discover Africa's iconic wildlife on an unforgettable game drive! #Namibia #safari",
+      duration_in_hours: 3
+      },
+      {
+      name: "Game Drive Child Under 12 years",
+      location: "Mount Etjo",
+      country: "Namibia",
+      price: 55,
+      description: "Young adventurers can join in on the excitement of a game drive and spot some of Africa's most iconic wildlife in their natural habitat. Introduce your kids to Africa's wildlife on a safari adventure at Mount Etjo in Namibia. The perfect family day out! #Namibia #familytravel",
+      duration_in_hours: 3
+      },
+      {
+        name: "Lion Feed",
+        location: "Mount Etjo",
+        country: "Namibia",
+        price: 25,
+        description: "Experience the thrill of feeding lions at Mount Etjo's big cat sanctuary. Get up close and personal with lions at Mount Etjo's big cat sanctuary.",
+        duration_in_hours: 1,
+        },
+  
+  {
+    name: "Lion Feed child under 12 years",
+    location: "Mount Etjo",
+    country: "Namibia",
+    price: 25,
+    description: "Experience the thrill of feeding lions at Mount Etjo's big cat sanctuary. Get up close and personal with lions at Mount Etjo's big cat sanctuary.",
+    duration_in_hours: 1,
+  },
+  {
+    name: "Cheetah Feeding",
+    location: "Mount Etjo",
+    country: "Namibia",
+    price: 15,
+    description: "Experience the thrill of feeding cheetahs at Mount Etjo's big cat sanctuary. Get up close and personal with cheetahs at Mount Etjo's big cat sanctuary.",
+    duration_in_hours: 1,
+  },
+  {
+    name: "Cheetah Feeding child under 12 years",
+    location: "Mount Etjo",
+    country: "Namibia",
+    price: 75,
+    description: "Experience the thrill of feeding cheetahs at Mount Etjo's big cat sanctuary. Get up close and personal with cheetahs at Mount Etjo's big cat sanctuary.",
+    duration_in_hours: 1,
+  },
+  {
+    name: "Ephemeral (Dry) River Drive",
+    location: "Mowani Mountain Camp",
+    country: "Namibia",
+    price: 40,
     duration_in_hours: 4,
+    description: "Explore the beautiful and rugged terrain of the ephemeral rivers in Namibia on this exciting 4-6 hour drive. A must-do for nature enthusiasts! Get ready for an exciting adventure in Namibia's ephemeral rivers! This 4-6 hour drive is a must-do for nature enthusiasts. #Namibia #adventure #naturelover",
   },
   {
-    name: "Caprivi Strip Boat Safari",
-    location: "Caprivi Strip",
-    price: 80,
-    description:
-      "Take a boat safari on the scenic rivers of the Caprivi Strip, and witness the amazing wildlife and birdlife of the region, including crocodiles, hippos, elephants, and many more.",
+    name: "Sunrise / Sunset Game Drive",
+    location: "Naankuse Lodge",
     country: "Namibia",
-    duration_in_hours: 3,
-  },
-  {
-    name: "Kaokoland Cultural Tour",
-    location: "Kaokoland",
-    price: 300,
-    description:
-      "Join a cultural tour of the remote and traditional Kaokoland region, and learn about the unique customs, lifestyle, and heritage of the Himba people.",
-    country: "Namibia",
-    duration_in_hours: 12,
-  },
-  {
-    name: "Namib-Naukluft Park Hot Air Balloon Ride",
-    location: "Namib-Naukluft Park",
-    price: 400,
-    description:
-      "Take a breathtaking hot air balloon ride over the stunning landscapes of Namib-Naukluft Park, and witness the unique flora and fauna of the region from a bird's-eye view.",
-    country: "Namibia",
+    price: 45,
     duration_in_hours: 2,
+    description: "Experience the breathtaking beauty of the Namibian wilderness on this 2-hour game drive during sunrise or sunset. Don't forget your camera! Experience the stunning beauty of Namibia's wilderness on a 2-hour game drive during sunrise or sunset. Don't miss this unforgettable adventure! #Namibia #safari #wilderness",
+  },
+  {
+    name: "Sunrise / Sunset Game Drive child 3 - 12 years",
+    location: "Naankuse Lodge",
+    country: "Namibia",
+    price: 25,
+    duration_in_hours: 2,
+    description: "Make unforgettable memories with your children on this 2-hour game drive during sunrise or sunset. They'll love seeing the animals in their natural habitat! Make unforgettable memories with your kids on a 2-hour game drive during sunrise or sunset in Namibia. They'll love seeing the animals up close! #Namibia #familyfun #wildlife",
+  },
+  {
+    name: "Carnivore Tour Adult",
+    location: "Naankuse Lodge",
+    country: "Namibia",
+    price: 55,
+    duration_in_hours: 2,
+    description: "Join us for an unforgettable experience as you get up close and personal with some of Namibia's carnivorous animals on this exciting 2-hour tour. Get up close and personal with Namibia's carnivorous animals on an exciting 2-hour tour! This unforgettable experience is a must-do. #Namibia #wildlife #adventure",
+  },
+  {
+    name: "Carnivore Tour Child (under 12)",
+    location: "Naankuse Lodge",
+    country: "Namibia",
+    price: 25,
+    description: "Experience a close encounter with Namibia's carnivores on this tour designed for children under 12 years old.",
+    duration_in_hours: 2
+  },
+  {
+    name: "Cheetah Experience Adult",
+    location: "Naankuse Lodge",
+    country: "Namibia",
+    price: 105,
+    description: "Get up close and personal with Namibia's majestic cheetahs on this unforgettable experience.",
+    duration_in_hours: 3
+  },
+  {
+    name: "Cheetah Experience Child (under 12)",
+    location: "Naankuse Lodge",
+    country: "Namibia",
+    price: 105,
+    description: "A once-in-a-lifetime experience for children under 12 to learn about and interact with Namibia's cheetahs.",
+    duration_in_hours: 3
+  },
+  {
+    name: "Ballooning over Sossusvlei",
+    location: "Namib Sky",
+    country: "Namibia",
+    price: 505,
+    description: "Soar above the stunning Sossusvlei desert landscapes on a hot air balloon ride, taking in breathtaking views from above.",
+    duration_in_hours: 4
+  },
+  {
+    name: "Leopard Tracking",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 40,
+    description: "Join an experienced guide to track and observe Namibia's elusive leopards in their natural habitat.",
+    duration_in_hours: 3
+  },
+  {
+    name: "Leopard Tracking child 6 - 16",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 40,
+    description: "A family-friendly experience for children aged 6 to 16 to learn about and track Namibia's magnificent leopards.",
+    duration_in_hours: 3
+  },  
+  {
+    name: "AfriCat Tour",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 30,
+  },
+  {
+    name: "AfriCat Tour child 3 - 16",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 715,
+  },
+  {
+    name: "Bushman Tour - OFF The Beaten Track",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 50,
+  },
+  {
+    name: "Bushman Tour - OFF The Beaten Track child 3-16",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 145,
+  },
+  {
+    name: "Endangered Species (Game Drive)",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 145,
+  },
+  {
+    name: "Endangered Species (Game Drive) child 6-16",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 70,
+  },
+  {
+    name: "Game Drive",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 185,
+  },
+  {
+    name: "Game Drive child 6-16",
+    location: "Okonjima Plains Camp",
+    country: "Namibia",
+    price: 60,
+  },
+  {
+    name: "Guided Game Drive",
+    location: "Old Traders Lodge - Erindi",
+    country: "Namibia",
+    price: 45,
+  },
+  {
+    name: "Morning/Afternoon Etosha NP game drive",
+    location: "Onguma",
+    country: "Namibia",
+    price: 200,
+  },
+  {
+    name: "Onguma sundowner drive",
+    location: "Onguma",
+    country: "Namibia",
+    price: 140,
+  },
+  {
+    name: "Guided walking safaris",
+    location: "Onguma",
+    country: "Namibia",
+    price: 305,
+  },
+  {
+    name: "The Hide",
+    location: "Onguma",
+    country: "Namibia",
+    price: 265,
+  },
+  {
+    name: "Private Game Drive - full day (per vehicle)",
+    location: "Onguma",
+    country: "Namibia",
+    price: 135,
+  },
+  {
+    name: "Himba Excursion",
+    location: "Opuwo Country Lodge",
+    country: "Namibia",
+    price: 100,
+  },
+  {
+    name: "Epupa Falls Excursion",
+    location: "Opuwo Country Lodge",
+    country: "Namibia",
+    price: 205,
+  },
+  {
+    name: "Ruacana Falls Excursion",
+    location: "Opuwo Country Lodge",
+    country: "Namibia",
+    price: 140,
+  },
+  {
+    name: "Palmwag Concession game drive(morning + afternoon)",
+    location: "Palmwag",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Palmwag Concession (Full Day Damaraland Excursion)",
+    location: "Palmwag",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Kayaking",
+    location: "Pelican Point / Eco Marine",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Kayaking child <12",
+    location: "Pelican Point / Eco Marine",
+    country: "Namibia",
+    price: 30,
+  },
+  {
+    name: "Kayak Combo",
+    location: "Pelican Point / Eco Marine",
+    country: "Namibia",
+    price: 15,
+  },
+  {
+    name: "Kayaking Combo child <12",
+    location: "Pelican Point / Eco Marine",
+    country: "Namibia",
+    price: 60,
+  },
+  {
+    name: "Shipwreck Sandwich Harbour full day",
+    location: "Sandwich Harbour 4X4",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Shipwreck Sandwich Harbour full day child 4-12",
+    location: "Sandwich Harbour 4X4",
+    country: "Namibia",
+    price: 35,
+  },
+  {
+    name: "Sandwich harbour half day",
+    location: "Sandwich Harbour 4X4",
+    country: "Namibia",
+    price: 30,
+  },
+  {
+    name: "Sandwich harbour half day  child 4-12",
+    location: "Sandwich Harbour 4X4",
+    country: "Namibia",
+    price: 55,
+  },
+  {
+    name: "Hiking 2Hrs Guided",
+    location: "Solitaire Desert Farm",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Guided Sossusvlei & Dead Vlei (+N$ 140 b/fast if not staying at Taleni)",
+    location: "Sossusvlei Lodge Adventure Centre",
+    country: "Namibia",
+    price: 60,
+  },
+  {
+    name: "Sundowner nature drive",
+    location: "Sossusvlei Lodge Adventure Centre",
+    country: "Namibia",
+    price: 65,
+  },
+  {
+    name: "Guided elim dune nature walk",
+    location: "Sossusvlei Lodge Adventure Centre",
+    country: "Namibia",
+    price: 60,
+  },
+  {
+    name: "Sesriem Canyon",
+    location: "Sossusvlei Lodge Adventure Centre",
+    country: "Namibia",
+    price: 170,
+  },
+  {
+    name: "Off-road Buggy Trail",
+    location: "Sossusvlei Lodge Adventure Centre",
+    country: "Namibia",
+    price: "FOC",
+  },
+  {
+    name: "Guided walk to the Bushman Paradise",
+    location: "Spitzkoppen Lodge",
+    country: "Namibia",
+    price: 45,
+  },
+  {
+    name: "Guided Drives",
+    location: "Spitzkoppen Lodge",
+    country: "Namibia",
+    price: 40,
+  },
+  {
+    name: "Sunset Guided Cycling Tour",
+    location: "Spitzkoppen Lodge",
+    country: "Namibia",
+    price: 35,
+  },
+  {
+    name: "Guided Mountain Hiking",
+    location: "Spitzkoppen Lodge",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Guided Horse Riding",
+    location: "Spitzkoppen Lodge",
+    country: "Namibia",
+    price: 390,
+  },
+  {
+    name: "Ephemeral (Dry) River Drive  (± 4 hrs) Adults",
+    location: "Twyfelfontein Country Lodge",
+    country: "Namibia",
+    price: 50,
+  },
+  {
+    name: "Ephemeral (Dry) River Drive  (± 4 - 11 hrs) Children ",
+    location: "Twyfelfontein Country Lodge",
+    country: "Namibia",
+    price: 25,
+  },
+  {
+    name: "Sundowner Drive",
+    location: "Vingerklip Lodge",
+    country: "Namibia",
+    price: 40,
+  },
+  {
+    name: "CCF Activity",
+    location: "Waterberg Guest Farm ",
+    country: "Namibia",
+    price: 65,
+  },
+  {
+    name: "Guided Plateau Hike",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 90,
+  },
+  {
+    name: "Honeymoon sundowner",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 45,
+  },
+  {
+    name: "Rhino drive",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 30,
+  },
+  {
+    name: "Game tracking on foot",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 15,
+  },
+  {
+    name: "Cultural Tour: Hereroland",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 15,
+  },
+  {
+    name: "History Path",
+    location: "Waterberg Wilderness",
+    country: "Namibia",
+    price: 10,
+  },
+  {
+    name: "Sundowner Drive 2hrs",
+    location: "Zebra Kalahari Lodge",
+    country: "Namibia",
+    price: 30,
+  },
+  {
+    name: "Morning Drive 2hrs",
+    location: "Zebra Kalahari Lodge",
+    country: "Namibia",
+    price: 15,
+  },
+  {
+    name: "Bushman Walk 1hr (included with every 2 night stay)",
+    location: "Zebra Kalahari Lodge",
+    country: "Namibia",
+    price: 40,
+  },
+  {
+    name: "Private Vehicle per activity",
+    location: "Zebra Kalahari Lodge",
+    country: "Namibia",
+    price: 20,
   },
 ];
 
@@ -866,81 +1423,14 @@ const attractions = [
 // migrate data
 function migrate() {
   const [loading, setLoading] = useState(false);
-const [migrations, setMigrations] = useState<Promise<unknown>[]>([]);
-// function migrate_to_db() {
-//     function trip() {
-//       setLoading(true);
-//      const data = trips.forEach(async (element) => {
-//         setTimeout(() => {
-//           const trip = element;
-//           const res = apiController(TourApiCalls.createTrip(trip));
-//           // push to migrations
-//           setMigrations([...migrations, res]);
-         
-//           console.log("migrated", res);
-//         }, 3000);
-//       });
-//       console.log(data);
-//     }
+  const [migrations, setMigrations] = useState<Promise<unknown>[]>([]);
 
-//     function accommodation() {
-//       const data = accomodations.forEach(async (element) => {
-//         setTimeout(() => {
-//           const accomodation = element;
-//           apiController(TourApiCalls.createAccomodation(accomodation));
-//           console.log("migrated");
-//         }, 3000);
-//       });
-//       console.log(data);
-//     }
-//     function activity() {
-//       const data = activities.forEach(async (element) => {
-//         setTimeout(() => {
-//           const activity = element;
-//           apiController(TourApiCalls.createActivity(activity));
-//           console.log("migrated");
-//         }, 3000);
-//       });
-//       console.log(data);
-//     }
-//     function attraction() {
-//       const data = attractions.forEach(async (element) => {
-//         setTimeout(() => {
-//           const attraction = element;
-//           apiController(TourApiCalls.createAttraction(attraction));
-//           console.log("migrated");
-//         }, 30000);
-//       });
-//       console.log(data);
-//     }
-//     function car() {
-//       const data = cars.forEach(async (element) => {
-//         setTimeout(() => {
-//           const car = element;
-//           apiController(TourApiCalls.createCar(car));
-//           console.log("migrated");
-//         }, 3000);
-//       });
-//       console.log(data);
-//     }
-//     trip();
-
-//     //accommodation();
-//     //activity();
-//     //attraction();
-//     //car();
-//     setLoading(false);
-
-//     console.log("migrated successfully");
-//   }
-
-  
   function migrate_to_db() {
     setLoading(true);
-    const data = cars.forEach(async (element) => {
+    const data = activities.forEach(async (element) => {
       setTimeout(() => {
         const dt = element;
-        const res = apiController(TourApiCalls.createCar(dt));
+        const res = apiController(TourApiCalls.createActivity(dt));
         // push to migrations
         setMigrations([...migrations, res]);
         console.log("migrated", res);
@@ -953,20 +1443,20 @@ const [migrations, setMigrations] = useState<Promise<unknown>[]>([]);
   return (
     <div>
       <button
-        className="flex justify-center items-center gap-2"
-        onClick={()=>migrate_to_db()}
+        className="flex justify-center items-center gap-5 rounded-tl-none "
+        onClick={() => migrate_to_db()}
       >
         Migrate
-        {loading ? 
+        {loading ? (
           <span className=" w-8  aspect-square border-b border-red-600 animate-spin rounded-full"></span>
-         : 
-          <span className=" w-8  aspect-square border-b border-red-600 rounded-full"></span>
-        }
+        ) : null}
       </button>
 
-      {migrations.map((migration,i) => {
+      {migrations.map((migration, i) => {
         return (
-          <p key={i} className=" text-xs p-3 rounded-xl">{JSON.stringify(migration)}</p>
+          <p key={i} className=" text-xs p-3 rounded-xl">
+            {JSON.stringify(migration)}
+          </p>
         );
       })}
     </div>

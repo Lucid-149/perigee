@@ -36,7 +36,9 @@ const Login = () => {
                   {user.email}
                 </h4>
                 {user.verified ? (
-                  <span>Verified</span>
+                  <div className=" flex justify-center">
+                  <Migrate />
+                  Verified</div>
                 ) : (
                   <span className=" text-red-600 font-bold uppercase text-xs">
                     Not Verified
@@ -68,7 +70,7 @@ const Login = () => {
               </form>
             )}
             {error && <p>{error}</p>}
-          </>
+          </> 
         </CardComponent>
       </Suspense>
     </div>
